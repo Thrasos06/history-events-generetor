@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'MyFont';
+    src: local('MyFont'), url(./AkayaKanadaka-Regular.ttf);
+  }
+
+  body {
+      margin: 0;
+      background-color: dimgray;
+  }
+
+  #header {
+      background-image: url(./logo.png);
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position-y: center;
+      height: 300px;
+  }
+
+#containerForm {
+    width: 100%;
+    margin: auto;
+    height: 50px;
+    text-align: center;
+   
+}
+
+.inputForm {
+    width: 18%;
+    height: 100%;
+    font-size: large;
+    font-weight: bold;
+}
+
+#buttonClick{
+    margin-top: 20px;
+    width: 150px;
+    height: 60px;
+    border-radius: 4px;
+    background-color: paleturquoise;
+    font-family: 'MyFont';
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#theEvent {
+    font-family: 'MyFont';
+    font-size: x-large;
+}
+
+#footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(44, 10, 99);
+    box-shadow: purple;
+    color: white;
+    font-family: 'MyFont';
+    font-weight: bold;
+    text-align: center;
+  }
