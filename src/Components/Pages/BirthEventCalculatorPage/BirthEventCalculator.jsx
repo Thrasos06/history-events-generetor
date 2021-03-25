@@ -214,7 +214,7 @@ const BirthEventCalculator = () => {
                         onClick={publish}
                         href
                     >
-                        {robots === "" ? "Lets Learn!" : "Find Another!"}
+                        {robots === "" ? "Lets Learn!" : "Find Another!!"}
                     </a>
                 </InputGroups>
                 <div id="theEvent">
