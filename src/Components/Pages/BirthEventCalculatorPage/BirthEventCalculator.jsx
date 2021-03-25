@@ -1,33 +1,56 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
 
-const ContainerForm = styled("div")`
-    width: 50%;
-    margin: auto;
-    /* height: 50px; */
-    text-align: center;
+const InputGroups = styled("div")`
+    display: flex;
+    min-width: 340px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-end;
+    border-radius: 0px;
+    padding: 5px;
 
-    & > .inputForm {
-        width: 18%;
+    & > .form-group {
+        width: 100%;
         height: 100%;
-        font-size: large;
-        font-weight: bold;
+
+        display: flex;
+        flex-direction: column;
+        /* margin-bottom: 20px; */
+
+        & > select {
+            height: 40px;
+            font-size: large;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-indent: 10px;
+            cursor: pointer;
+            /* border: 5px solid red; */
+        }
     }
 
     & > #buttonClick {
-        margin-top: 20px;
-        width: 150px;
-        height: 60px;
-        border-radius: 4px;
+        min-width: 100px;
+        height: 38px;
+        /* border-radius: 4px; */
         background-color: paleturquoise;
-        font-family: "MyFont";
+        background-color: #fff;
+        background-color: #406060;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: large;
         font-weight: bold;
-        font-size: x-large;
-    }
-
-    & > #theEvent {
-        font-family: "MyFont";
-        font-size: x-large;
+        border: 1px solid #000;
+        /* border: 5px solid red; */
+        transition: 0.5s;
+        &:hover {
+            cursor: pointer;
+            background-color: #507070;
+        }
     }
 `;
 
@@ -44,6 +67,26 @@ const BirthEventCalculator = () => {
     const [activeDay, setActiveDay] = useState(0);
     const [robots, setRobots] = useState("");
     const [daysList, setDaysList] = useState(setNewDaysArray(31));
+
+    const ContainerForm = styled("div")({
+        width: robots === "" ? "390px" : "810px",
+        height: robots === "" ? "200px" : "300px",
+        /* margin: auto; */
+        padding: "20px",
+        backgroundColor: "#fff",
+        /* height: 50px; */
+        /* text-align: center; */
+
+        "& h3": {
+            textAlign: "center",
+        },
+
+        "& > #theEvent": {
+            fontFamily: "MyFont",
+            fontSize: "x-large",
+            textAlign: "center",
+        },
+    });
 
     const inputList = [
         {
@@ -72,7 +115,7 @@ const BirthEventCalculator = () => {
     ];
 
     const publish = () => {
-        fetch(`http://numbersapi.com/${activeMonth}/${activeDay}/date`)
+        fetch(`http://numbersapi.com/${activeMonth + 1}/${activeDay + 1}/date`)
             .then((response) => response.text())
             .then((text) => setRobots(text));
 
@@ -161,11 +204,19 @@ const BirthEventCalculator = () => {
     return (
         <>
             <ContainerForm>
-                <h1>Enter Your Birth Date!</h1>
-                {renderInputs(activeDay, activeMonth, changeValue)}
-                <button id="buttonClick" value="Send" onClick={publish}>
-                    Lets Learn!
-                </button>
+                <h3>Enter Your Birth Date!</h3>
+                <InputGroups>
+                    {renderInputs(activeDay, activeMonth, changeValue)}
+                    <a
+                        className="form-group"
+                        id="buttonClick"
+                        value="Send"
+                        onClick={publish}
+                        href
+                    >
+                        {robots === "" ? "Lets Learn!" : "Find Another!"}
+                    </a>
+                </InputGroups>
                 <div id="theEvent">
                     <p>{robots}</p>
                 </div>
