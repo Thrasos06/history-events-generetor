@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/history-events/static/css/main.9e3e040e.chunk.css",
+    "main.js": "/history-events/static/js/main.d752bc90.chunk.js",
+    "main.js.map": "/history-events/static/js/main.d752bc90.chunk.js.map",
+    "runtime-main.js": "/history-events/static/js/runtime-main.06ef56a0.js",
+    "runtime-main.js.map": "/history-events/static/js/runtime-main.06ef56a0.js.map",
+    "static/js/2.b57f5fdb.chunk.js": "/history-events/static/js/2.b57f5fdb.chunk.js",
+    "static/js/2.b57f5fdb.chunk.js.map": "/history-events/static/js/2.b57f5fdb.chunk.js.map",
+    "static/js/3.73e37fda.chunk.js": "/history-events/static/js/3.73e37fda.chunk.js",
+    "static/js/3.73e37fda.chunk.js.map": "/history-events/static/js/3.73e37fda.chunk.js.map",
+    "index.html": "/history-events/index.html",
+    "static/css/main.9e3e040e.chunk.css.map": "/history-events/static/css/main.9e3e040e.chunk.css.map",
+    "static/js/2.b57f5fdb.chunk.js.LICENSE.txt": "/history-events/static/js/2.b57f5fdb.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/history-events/static/media/AkayaKanadaka-Regular.71c53e48.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.06ef56a0.js",
+    "static/js/2.b57f5fdb.chunk.js",
+    "static/css/main.9e3e040e.chunk.css",
+    "static/js/main.d752bc90.chunk.js"
+  ]
+}
