@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "@emotion/styled";
+import axios from "axios";
 
 const InputGroups = styled("div")`
     display: flex;
@@ -114,10 +115,29 @@ const BirthEventCalculator = () => {
         "December",
     ];
 
+    const options = {
+        method: 'GET',
+        url: `https://numbersapi.p.rapidapi.com/${activeMonth + 1}/${activeDay + 1}/date`,
+        params: {fragment: 'true', json: 'true'},
+        headers: {
+          'x-rapidapi-key': 'f273af8f54msh725e5e45aa86200p1ba069jsn5c06a537ced0',
+          'x-rapidapi-host': 'numbersapi.p.rapidapi.com'
+        }
+      };
+      
+
     const publish = () => {
-        fetch(`http://numbersapi.com/${activeMonth + 1}/${activeDay + 1}/date`)
-            .then((response) => response.text())
-            .then((text) => setRobots(text));
+        axios.request(options).then(function (response) {
+            let text = response.data.text;
+            let year = response.data.year;
+            let phrase = `In the year of ${year}, ${text}`;
+            setRobots(phrase);
+        }).catch(function (error) {
+            console.error(error);
+        });
+        // fetch(`http://numbersapi.com/${activeMonth + 1}/${activeDay + 1}/date`)
+        //     .then((response) => response.text())
+        //     .then((text) => setRobots(text));
 
         // window.open(`http://numbersapi.com/${this.state.month}/${this.state.day}/date`);
         // this.Brings();
