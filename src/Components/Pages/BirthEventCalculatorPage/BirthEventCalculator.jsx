@@ -115,7 +115,7 @@ const BirthEventCalculator = () => {
     ];
 
     const publish = () => {
-        fetch(`http://numbersapi.com/${activeMonth + 1}/${activeDay + 1}/date`)
+        fetch(`https://numbersapi.com/${activeMonth + 1}/${activeDay + 1}/date`)
             .then((response) => response.text())
             .then((text) => setRobots(text));
 
